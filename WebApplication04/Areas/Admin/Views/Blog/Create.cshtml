@@ -1,0 +1,26 @@
+﻿@model BlogCreateVM
+@{
+    ViewData["Title"] = "Blog Create Page";
+}
+@section Style
+{
+    <link rel="stylesheet" href="~/style.css">
+}
+<br>
+<div class="wrapper">
+    <h2>Blog</h2>
+    <form method="post" enctype="multipart/form-data">
+        <div class="input-box">
+            <input asp-for="Title" placeholder="Enter title" required>
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="input-box">
+            <input asp-for="ImageFile" accept="image/*">
+            <span asp-validation-for="ImageFile"></span>
+        </div>
+        <div class="input-box button">
+            <button type="Submit">Create</button>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="alert-danger"></div>
+    </form>
+</div>
